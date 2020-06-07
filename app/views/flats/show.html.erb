@@ -1,10 +1,19 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">Simple Airbnb</a>
-  <%= link_to "Add flat", new_flat_path, class: "btn btn-outline-primary my-2 my-sm-0"  %>
+<div class="flat-container">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  </div>
+  <div class="flat-info-card">
+    <div class="flat-title">
+      <h2><%= @flat.name.capitalize %></h2>
+      <p><%= @flat.address %></p>
+    </div>
+    <div class ="flat-description">
+      <h3>A little more info about this flat</h3>
+      <p><%= @flat.description %></p>
+    </div>
+    <div class="flat-details">
+      <h2>Details</h2>
+      <p><i class="fas fa-yen-sign"></i><%= @flat.price_per_night %>  <i class="fas fa-user-friends"></i><%= @flat.number_of_guests %></p>
+    </div>
 
-</nav>
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-  Breakfast
+  </div>
 </div>
-
-<h1>Show page</h1>
