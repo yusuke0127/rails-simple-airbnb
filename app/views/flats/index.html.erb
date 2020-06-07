@@ -6,15 +6,16 @@
     <% @flats.each do |flat| %>
       <div class="card m-2" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title"><%= flat.name %></h5>
+          <h5 class="card-title"><%= flat.name.capitalize %></h5>
           <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>
           <p class="card-text"><%= flat.description %></p>
-          <p class="card-text"><i class="fas fa-user-friends"></i> <%= flat.number_of_guests %></p>
-          <p class="card-text"><i class="fas fa-yen-sign"></i> <%= flat.price_per_night %></p>
+          <p class="card-text"><i class="fas fa-user-friends"></i> <%= flat.number_of_guests %> <i class="fas fa-yen-sign"></i> <%= flat.price_per_night %></p>
 
         </div>
-        <%= link_to "More info", flat_path(flat), class: "card-footer"%>
-        <div>
+        <div class="card-footer">
+          <%= link_to "More info", flat_path(flat), class: "text-primary" %>
+          <%= link_to "Edit", edit_flat_path(flat), class: "text-warning" %>
+          <%= link_to "Delete", flat_path(flat), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger" %>
 
         </div>
       </div>

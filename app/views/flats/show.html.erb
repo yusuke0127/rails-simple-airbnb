@@ -16,4 +16,6 @@
     </div>
 
   </div>
+  <%= link_to "Edit Flat", edit_flat_path(@flat) %>
+  <%= link_to "Destroy Flat", flat_path(@flat), method: :delete, data: { confirm: "Are you sure?"}  %>
 </div>
